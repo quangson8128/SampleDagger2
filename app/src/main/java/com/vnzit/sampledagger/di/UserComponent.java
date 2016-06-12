@@ -11,5 +11,4 @@ import dagger.Component;
 @Component(dependencies = AppComponent.class, modules = {ActivityModule.class, UserModule.class})
 public interface UserComponent extends ActivityComponent{
     void inject(TutorialActivity tutorialActivity);
-    void inject(com.vnzit.sampledagger.ui.tutorial2.TutorialActivity tutorialActivity);
 }
