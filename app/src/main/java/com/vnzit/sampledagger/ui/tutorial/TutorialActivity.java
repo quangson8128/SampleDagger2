@@ -1,8 +1,6 @@
 package com.vnzit.sampledagger.ui.tutorial;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import com.vnzit.sampledagger.R;
@@ -16,7 +14,8 @@ import javax.inject.Inject;
 
 public class TutorialActivity extends BaseActivity<UserComponent> {
 
-    @Inject TutorialPresenter presenter;
+    @Inject
+    Item item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +23,7 @@ public class TutorialActivity extends BaseActivity<UserComponent> {
         setContentView(R.layout.activity_main);
         final TextView tvContent = (TextView) findViewById(R.id.tvContent);
         getComponent().inject(this);
+        tvContent.setText(item.getContent());
     }
 
     protected UserComponent initializeInjector() {
